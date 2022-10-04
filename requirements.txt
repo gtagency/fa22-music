@@ -1,2 +1,11 @@
 pretty_midi
 tensorflow
+fluidsynth
+seaborn
+pandas
+numpy
+glob
+pathlib
+IPython
+matplotlib
+typing
