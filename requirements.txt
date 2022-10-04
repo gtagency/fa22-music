@@ -4,7 +4,7 @@ fluidsynth
 seaborn
 pandas
 numpy
-glob
+glob2
 pathlib
 IPython
 matplotlib
