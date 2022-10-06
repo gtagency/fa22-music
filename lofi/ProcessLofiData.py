@@ -13,15 +13,50 @@ from IPython import display
 from matplotlib import pyplot as plt
 from typing import Dict, List, Optional, Sequence, Tuple
 
-seed = 42
-tf.random.set_seed(seed)
-np.random.seed(seed)
+def generateTrainingDS():
+    seed = 42
+    tf.random.set_seed(seed)
+    np.random.seed(seed)
 
-# Sampling rate for audio playback
-_SAMPLING_RATE = 16000
+    # Sampling rate for audio playback
+    _SAMPLING_RATE = 16000
 
-files = glob.glob("data/archive/*.mid")
-numFiles = len(files)
+    files = glob.glob("data/archive/*.mid")
+    
+    num_files = len(files)
+    all_notes = []
+    for f in files[:num_files]:
+      notes = midi_to_notes(f)
+      all_notes.append(notes)
+
+    all_notes = pd.concat(all_notes)
+
+    n_notes = len(all_notes)
+#     print('Number of notes parsed:', n_notes)
+
+    key_order = ['pitch', 'step', 'duration']
+    train_notes = np.stack([all_notes[key] for key in key_order], axis=1)
+
+    notes_ds = tf.data.Dataset.from_tensor_slices(train_notes)
+#     notes_ds.element_spec
+
+    
+    seq_length = 25
+    vocab_size = 128
+    seq_ds = create_sequences(notes_ds, seq_length, vocab_size)
+    seq_ds.element_spec
+
+    batch_size = 64
+    buffer_size = n_notes - seq_length  # the number of items in the dataset
+    train_ds = (seq_ds
+                .shuffle(buffer_size)
+                .batch(batch_size, drop_remainder=True)
+                .cache()
+                .prefetch(tf.data.experimental.AUTOTUNE))
+    
+    return train_ds
+    
+    
 
 def midi_to_notes(midi_file: str) -> pd.DataFrame:
   pm = pretty_midi.PrettyMIDI(midi_file)
@@ -44,22 +79,6 @@ def midi_to_notes(midi_file: str) -> pd.DataFrame:
 
   return pd.DataFrame({name: np.array(value) for name, value in notes.items()})
 
-num_files = len(files)
-all_notes = []
-for f in files[:num_files]:
-  notes = midi_to_notes(f)
-  all_notes.append(notes)
-
-all_notes = pd.concat(all_notes)
-
-n_notes = len(all_notes)
-print('Number of notes parsed:', n_notes)
-
-key_order = ['pitch', 'step', 'duration']
-train_notes = np.stack([all_notes[key] for key in key_order], axis=1)
-
-notes_ds = tf.data.Dataset.from_tensor_slices(train_notes)
-notes_ds.element_spec
 
 def create_sequences(
     dataset: tf.data.Dataset, 
@@ -91,16 +110,3 @@ def create_sequences(
     return scale_pitch(inputs), labels
 
   return sequences.map(split_labels, num_parallel_calls=tf.data.AUTOTUNE)
-
-seq_length = 25
-vocab_size = 128
-seq_ds = create_sequences(notes_ds, seq_length, vocab_size)
-seq_ds.element_spec
-
-batch_size = 64
-buffer_size = n_notes - seq_length  # the number of items in the dataset
-train_ds = (seq_ds
-            .shuffle(buffer_size)
-            .batch(batch_size, drop_remainder=True)
-            .cache()
-            .prefetch(tf.data.experimental.AUTOTUNE))
