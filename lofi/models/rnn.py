@@ -13,13 +13,9 @@ from IPython import display
 from matplotlib import pyplot as plt
 from typing import Dict, List, Optional, Sequence, Tuple
 
-def mse_with_positive_pressure(y_true: tf.Tensor, y_pred: tf.Tensor):
-    mse = (y_true - y_pred) ** 2
-    positive_pressure = 10 * tf.maximum(-y_pred, 0.0)
-    return tf.reduce_mean(mse + positive_pressure)
 
 
-def create_model():
+def create_model(seq_length):
     input_shape = (seq_length, 3)
     learning_rate = 0.005
 

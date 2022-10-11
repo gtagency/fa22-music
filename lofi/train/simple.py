@@ -13,7 +13,7 @@ from IPython import display
 from matplotlib import pyplot as plt
 from typing import Dict, List, Optional, Sequence, Tuple
 
-def train(model, loss, optimizer):
+def simple_train(model, loss, optimizer, train_dataset):
     model.compile(
         loss=loss,
         loss_weights={
@@ -24,7 +24,7 @@ def train(model, loss, optimizer):
         optimizer=optimizer,
     )
 
-    model.evaluate(train_ds, return_dict=True)
+    model.evaluate(train_dataset, return_dict=True)
 
     callbacks = [
         tf.keras.callbacks.ModelCheckpoint(
@@ -40,7 +40,7 @@ def train(model, loss, optimizer):
     epochs = 50
 
     history = model.fit(
-        train_ds,
+        train_dataset,
         epochs=epochs,
         callbacks=callbacks,
     )
@@ -50,3 +50,20 @@ def train(model, loss, optimizer):
 def plot_history(history):
     plt.plot(history.epoch, history.history['loss'], label='total loss')
     plt.show()
+
+def mse_with_positive_pressure(y_true: tf.Tensor, y_pred: tf.Tensor):
+    mse = (y_true - y_pred) ** 2
+    positive_pressure = 10 * tf.maximum(-y_pred, 0.0)
+    return tf.reduce_mean(mse + positive_pressure)
+
+
+def get_loss_and_opt(learning_rate):
+    loss = {
+        'pitch': tf.keras.losses.SparseCategoricalCrossentropy(
+            from_logits=True),
+        'step': mse_with_positive_pressure,
+        'duration': mse_with_positive_pressure,
+    }
+    optimizer = tf.keras.optimizers.Adam(learning_rate=learning_rate)
+
+    return loss, optimizer
