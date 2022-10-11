@@ -4,7 +4,108 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bb14c27a-260a-4116-a536-2a70820586e3" name="Changes" comment="" />
+    <list default="true" id="bb14c27a-260a-4116-a536-2a70820586e3" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/lofi/models/rnn.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lofi/train/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lofi/train/simple.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/music_generation.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/examples/music_generation.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lofi/data/archive/1.mid" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lofi/data/archive/10.mid" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lofi/data/archive/11.mid" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lofi/data/archive/12.mid" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lofi/data/archive/13.mid" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lofi/data/archive/14.mid" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lofi/data/archive/15.mid" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lofi/data/archive/16.mid" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lofi/data/archive/17.mid" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lofi/data/archive/18.mid" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lofi/data/archive/19.mid" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lofi/data/archive/2.mid" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lofi/data/archive/20.mid" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lofi/data/archive/3.mid" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lofi/data/archive/4.mid" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lofi/data/archive/5.mid" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lofi/data/archive/6.mid" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lofi/data/archive/7.mid" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lofi/data/archive/8.mid" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lofi/data/archive/9.mid" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lofi/data/archive/Cymatics - Eternity MIDI 1 - C Maj.mid" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lofi/data/archive/Cymatics - Eternity MIDI 10 - F Min.mid" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lofi/data/archive/Cymatics - Eternity MIDI 11 - A Maj.mid" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lofi/data/archive/Cymatics - Eternity MIDI 12 - A Min.mid" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lofi/data/archive/Cymatics - Eternity MIDI 13 - A Min.mid" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lofi/data/archive/Cymatics - Eternity MIDI 14 - A Min.mid" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lofi/data/archive/Cymatics - Eternity MIDI 15 - A Maj.mid" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lofi/data/archive/Cymatics - Eternity MIDI 16 - A Maj.mid" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lofi/data/archive/Cymatics - Eternity MIDI 17 - A Maj.mid" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lofi/data/archive/Cymatics - Eternity MIDI 18 - A Maj.mid" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lofi/data/archive/Cymatics - Eternity MIDI 19 - A Min.mid" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lofi/data/archive/Cymatics - Eternity MIDI 2 - C Min.mid" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lofi/data/archive/Cymatics - Eternity MIDI 20 - A Min.mid" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lofi/data/archive/Cymatics - Eternity MIDI 21 - A Min.mid" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lofi/data/archive/Cymatics - Eternity MIDI 22 - B Min.mid" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lofi/data/archive/Cymatics - Eternity MIDI 3 - D Maj.mid" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lofi/data/archive/Cymatics - Eternity MIDI 4 - D Maj.mid" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lofi/data/archive/Cymatics - Eternity MIDI 5 - D Min.mid" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lofi/data/archive/Cymatics - Eternity MIDI 6 - D Min.mid" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lofi/data/archive/Cymatics - Eternity MIDI 7 - E Min.mid" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lofi/data/archive/Cymatics - Eternity MIDI 8 - F Maj.mid" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lofi/data/archive/Cymatics - Eternity MIDI 9 - F Min.mid" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lofi/data/archive/Cymatics - Lofi MIDI 1 - C Maj.mid" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lofi/data/archive/Cymatics - Lofi MIDI 10 - D Maj.mid" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lofi/data/archive/Cymatics - Lofi MIDI 11 - E Maj.mid" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lofi/data/archive/Cymatics - Lofi MIDI 12 - E Min.mid" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lofi/data/archive/Cymatics - Lofi MIDI 13 - E Min.mid" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lofi/data/archive/Cymatics - Lofi MIDI 14 - F Min.mid" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lofi/data/archive/Cymatics - Lofi MIDI 15 - F Maj.mid" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lofi/data/archive/Cymatics - Lofi MIDI 16 - F Maj.mid" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lofi/data/archive/Cymatics - Lofi MIDI 17 - G Maj.mid" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lofi/data/archive/Cymatics - Lofi MIDI 18 - G Maj.mid" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lofi/data/archive/Cymatics - Lofi MIDI 19 - G Maj.mid" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lofi/data/archive/Cymatics - Lofi MIDI 2 - C Maj.mid" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lofi/data/archive/Cymatics - Lofi MIDI 20 - G Min.mid" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lofi/data/archive/Cymatics - Lofi MIDI 21 - A Min.mid" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lofi/data/archive/Cymatics - Lofi MIDI 22 - B Min.mid" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lofi/data/archive/Cymatics - Lofi MIDI 3 - C Min.mid" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lofi/data/archive/Cymatics - Lofi MIDI 4 - D Maj.mid" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lofi/data/archive/Cymatics - Lofi MIDI 5 - D Maj.mid" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lofi/data/archive/Cymatics - Lofi MIDI 6 - D Min.mid" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lofi/data/archive/Cymatics - Lofi MIDI 7 - D Maj.mid" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lofi/data/archive/Cymatics - Lofi MIDI 8 - D Maj.mid" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lofi/data/archive/Cymatics - Lofi MIDI 9 - D Maj.mid" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lofi/data/archive/E-Piano Chords MIDI.mid" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lofi/data/archive/E-Piano MIDI (2).mid" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lofi/data/archive/E-Piano MIDI.mid" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lofi/data/archive/Lofi Piano MIDI.mid" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lofi/data/archive/Piano 1 MIDI.mid" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lofi/data/archive/Piano 2 MIDI.mid" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lofi/data/archive/Piano Chords MIDI (2).mid" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lofi/data/archive/Piano Chords MIDI (3).mid" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lofi/data/archive/Piano Chords MIDI.mid" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lofi/data/archive/Piano MIDI (2).mid" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lofi/data/archive/Piano MIDI (3).mid" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lofi/data/archive/Piano MIDI (4).mid" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lofi/data/archive/Piano MIDI (5).mid" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lofi/data/archive/Piano MIDI (6).mid" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lofi/data/archive/Piano MIDI (7).mid" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lofi/data/archive/Piano MIDI (8).mid" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lofi/data/archive/Piano MIDI 1.mid" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lofi/data/archive/Piano MIDI 2.mid" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lofi/data/archive/Piano MIDI.mid" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lofi/data/archive/Rhodes MIDI (2).mid" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lofi/data/archive/Rhodes MIDI (3).mid" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lofi/data/archive/Rhodes MIDI (4).mid" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lofi/data/archive/Rhodes MIDI (5).mid" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lofi/data/archive/Rhodes MIDI (6).mid" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lofi/data/archive/Rhodes MIDI (7).mid" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lofi/data/archive/Rhodes MIDI (8).mid" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lofi/data/archive/Rhodes MIDI (9).mid" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lofi/data/archive/Rhodes MIDI.mid" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lofi/data/archive/merge_from_ofoct.mid" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/model.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/train.py" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -28,18 +129,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/acheung/Documents/GitHub/fa22-music",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/acheung/Documents/GitHub/fa22-music&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">

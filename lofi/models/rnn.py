@@ -13,14 +13,6 @@ from IPython import display
 from matplotlib import pyplot as plt
 from typing import Dict, List, Optional, Sequence, Tuple
 
-seed = 42
-tf.random.set_seed(seed)
-np.random.seed(seed)
-
-# Sampling rate for audio playback
-_SAMPLING_RATE = 16000
-
-
 def mse_with_positive_pressure(y_true: tf.Tensor, y_pred: tf.Tensor):
     mse = (y_true - y_pred) ** 2
     positive_pressure = 10 * tf.maximum(-y_pred, 0.0)
@@ -55,4 +47,3 @@ def create_model():
     # model.summary()
 
     return model, loss, optimizer
-
