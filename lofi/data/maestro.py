@@ -171,8 +171,10 @@ def load_maestro():
 
     num_files = 5
     all_notes = []
-    for f in filenames[:num_files]:
+    for i, f in enumerate(filenames[:num_files]):
         notes = midi_to_notes(f)
+        if i == 0:
+            print('notes', notes)
         all_notes.append(notes)
 
     all_notes = pd.concat(all_notes)
@@ -182,6 +184,7 @@ def load_maestro():
 
     key_order = ['pitch', 'step', 'duration']
     train_notes = np.stack([all_notes[key] for key in key_order], axis=1)
+    print('train notes', train_notes)
 
     notes_ds = tf.data.Dataset.from_tensor_slices(train_notes)
 

@@ -8,3 +8,5 @@ pathlib
 IPython
 matplotlib
 typing
+miditoolkit
+scipy
